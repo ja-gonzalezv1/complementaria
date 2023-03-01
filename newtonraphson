@@ -1,0 +1,12 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
+def thefun(x,c):
+  return -x + 1 - (np.exp(-c*x))
+
+def thefunder(x,c):
+  return -1 + c*(np.exp(-c*x))
+
+def newtrap(x,c):
+  newx= x- (thefun(x,c)/thefunder(x,c))
+  return newx
