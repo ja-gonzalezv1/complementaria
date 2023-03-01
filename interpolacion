@@ -1,0 +1,14 @@
+def Lagrange(x,xi,j):
+  prod= 1
+  n= len(xi)
+  for i in range (n):
+     if i != j: 
+       prod *= (x-xi[i])/(xi[j]-xi[i])
+  return prod
+
+def Interpolate (x, xi, yi):
+  sum = 0
+  n= len(xi)
+  for j in range (n):
+    sum += yi[j] * Lagrange(x,xi,j)
+  return sum
